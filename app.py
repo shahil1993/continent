@@ -53,7 +53,7 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    ctry = parameters.get("Country")
+    ctry = parameters.get("geo-country")
     
     url="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"
     s=requests.get(url).content
