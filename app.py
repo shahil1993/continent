@@ -25,7 +25,7 @@ from urllib.error import HTTPError
 import json
 import os
 import io
-import requests
+#import requests
 import pandas as pd
 
 from flask import Flask
