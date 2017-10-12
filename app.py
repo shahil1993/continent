@@ -24,9 +24,9 @@ from urllib.error import HTTPError
 
 import json
 import os
-#import io
-#import requests
-#import pandas as pd
+import io
+import requests
+import pandas as pd
 
 from flask import Flask
 from flask import request
@@ -58,15 +58,15 @@ def makeWebhookResult(req):
     parameters = result.get("parameters")
     ctry = parameters.get("geo-country")
     
-   # url="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"
-   # s=requests.get(url).content
-   # c=pd.read_csv(io.StringIO(s.decode('utf-8')))
-  #  df=pd.DataFrame(c)
+   url="https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv"
+    s=requests.get(url).content
+    c=pd.read_csv(io.StringIO(s.decode('utf-8')))
+    df=pd.DataFrame(c)
 
    # cost = {'Europe':100, 'North America':200, 'South America':300, 'Asia':400, 'Africa':500}
 
-    #speech = ctry + "is in " +  str(df.Region[df.Country==ctry]) + " continent"
-    speech = ctry + "is in " + "Asia" + " continent"
+    speech = ctry + "is in " +  str(df.Region[df.Country==ctry]) + " continent"
+    #speech = ctry + "is in " + "Asia" + " continent"
     print("Response:")
     print(speech)
 
